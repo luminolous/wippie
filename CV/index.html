@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV | Syauqi Nabil Tasri</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg-tiles" aria-hidden="true" id="bgTiles"></div>
+
+  <button class="music-btn" id="musicBtn" type="button" aria-label="Putar musik" aria-pressed="false" title="Play/Pause music">
+    <svg class="music-btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 19a3 3 0 1 1-1.5-2.6V5a1 1 0 0 1 .78-.98l9-2A1 1 0 0 1 19.5 3v11.5a3 3 0 1 1-1.5-2.6V4.24L10 6.02V19z"></path>
+    </svg>
+  </button>
+  <audio id="bgm" src="assets/bgm.mp3" preload="auto" loop></audio>
+
+  <div class="page">
+    <header class="hero card">
+      <div class="avatar" aria-label="Profile Photo">
+        <img class="avatar__img" src="assets/profile.jpg" alt="Foto profil" />
+      </div>
+
+      <div class="hero__content">
+        <div class="hero__topline">
+          <h1 class="hero__name">Syauqi Nabil Tasri</h1>
+          <span class="pill"><i>also known as 'luminolous' or 'lumy' in other universe</i>/span>
+        </div>
+
+        <p class="hero__title">AI Engineering Student @ ITS • AI Research Enthusiast • Especially in Generative Models Ი𐑼</p>
+
+        <p class="hero__summary">
+          An otaku who interested exploring generative models, RVC, and efficient training tricks (LoRA/PEFT), 
+          mostly coding in Python and playing with anime multimodal datasets.
+        </p>
+        <p class="hero_summary">
+          <i>If it’s about animanga, I will probably try it at least once</i> (๑'ᵕ'๑)⸝*
+        </p>
+
+        <div class="chips">
+          <a class="chip" href="mailto:syauqinabil132@gmail.com">syauqinabil132@gmail.com</a>
+          <a class="chip" href="https://wa.me/6282392079884" title="Whatsapp" target="_blank">+62 823-9207-9884</a>
+          <a class="chip" href="https://www.linkedin.com/in/syauqi-nabil-tasri/" title="LinkedIn" target="_blank">LinkedIn</a>
+          <a class="chip" href="https://github.com/luminolous" title="GitHub" target="_blank">GitHub</a>
+          <a class="chip" href="https://huggingface.co/lumicero" title="HuggingFace" target="_blank">Hugging Face</a>
+          <a class="chip" href="https://www.kaggle.com/luminolous" title="Kaggle" target="_blank">Kaggle</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card section">
+        <h2 class="section__title">👻Introduction</h2>
+        <p class="lead">
+          AI Engineering student with a strong interest in research and development in Generative AI, 
+          particularly Diffusion-based image generation and Large Language Models. 
+          I’m building a solid foundation in Transformer architectures and optimization, 
+          supported by disciplined experimentation practices (clean experiment design, documentation, and reproducibility). 
+          I’m also hands-on with Python and deep learning ecosystems such as PyTorch / TensorFlow and Hugging Face.
+          
+          My current focus includes efficient fine-tuning and PEFT (LoRA / LoRA+ / other variants) for AI engineering 
+          under tight compute / VRAM constraints, as well as instruction tuning, Model evaluation and alignment. 
+          I also explore retrieval-based voice conversion (RVC) and multimodal pipelines. 
+          I am looking for a research environment with guidance and opportunities to turn ideas into testable, 
+          scalable real-world prototypes.
+        </p>
+
+        <div class="two-col">
+          <div>
+            <h3 class="section__subtitle">Education</h3>
+            <ul class="list">
+              <li><b>Sepuluh Nopember Institute of Technology</b> - AI Engineering, 2024 - 2028, expected</li>
+              <li><b>Semen Padang High School</b> - Science, 2021 - 2024</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="section__subtitle">Skill</h3>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pytorch</span>
+              <span class="tag">Transformers</span>
+              <span class="tag">Diffuser</span>
+              <span class="tag">Unsloth</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">and Drawing (still not good enough :3)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2 class="section__title">🧊Experience</h2>
+
+        <div class="timeline">
+          <article class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <h3 class="tl-title">Avalon AI Community</h3>
+              <p class="tl-meta">Member, 2025 - Now</p>
+              <p class="tl-text">
+                Membuat UI statis dan interaktif dengan HTML, CSS, dan JavaScript. Fokus pada konsistensi komponen,
+                responsif, dan aksesibilitas dasar (kontras, ukuran teks, hover/focus).
+              </p>
+            </div>
+          </article>
+
+          <article class="tl-item">
+            <div class="tl-dot" aria-hidden="true"></div>
+            <div class="tl-body">
+              <h3 class="tl-title">Bayucaraka UAV Research Team</h3>
+              <p class="tl-meta">Programming Division Intern, Oct. 2024 - Dec. 2024</p>
+              <p class="tl-text">
+                Mengelola kebutuhan publikasi, dokumentasi, atau koordinasi tim. Terbiasa bekerja dengan timeline dan membagi tugas.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2 class="section__title">🫧Achievement</h2>
+        <div class="badges">
+          <div class="badge">
+            <div>
+              <h3 class="badge__title">Honorable Mention (Finalist)</h3>
+              <p class="badge__text">AXION Kaggle Competition, 2025</p>
+            </div>
+          </div>
+
+          <div class="badge">
+            <div>
+              <h3 class="badge__title">1st Best Team</h3>
+              <p class="badge__text">ISE! Academy Python Programming for Data Science Intermediate Level, Oct. 2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2 class="section__title">🐋Top 5 Project</h2>
+        <div class="cards two">
+          <article class="mini-card">
+            <div class="mini-card__head">
+              <h3 class="mini-card__title">1) Waifu-Diffusion PEFT (LoRA) in Frieren Image Dataset</h3>
+              <span class="tag">Generative AI</span>
+              <span class="tag">Image Generation</span>
+              <span class="tag">Stable Diffusion</span>
+              <span class="tag">Hugging Face</span>
+            </div>
+            <p class="mini-card__text">
+              In this project, I fine-tune a lightweight LoRA adapter for the Waifu Diffusion 
+              text-to-image model 
+              (<a href="https://huggingface.co/hakurei/waifu-diffusion" title="Waifu Diffusion" target="_blank">
+              hakurei/waifu-diffusion
+              </a>) 
+              using the CyberHarem Frieren dataset, converts the dataset’s 
+              image-tag information into captions for training, trains the adapter with Diffusers’ train_text_to_image_lora.py 
+              workflow, exports the result as a compact pytorch_lora_weights.safetensors, and uploads it 
+              to the Hugging Face Hub so you can later attach it back to the base model with load_lora_weights() for inference.
+            </p>
+            <p class="mini-card__text">Model License: CreativeML-OpenRAIL-M</p>
+            <p class="mini-card__text"> Link to demonstration:
+              <a href="https://huggingface.co/spaces/lumicero/waifu-diffusion-lora-demo" title="Frieren LoRA" target="_blank">
+              HuggingFace
+              </a>
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-card__head">
+              <h3 class="mini-card__title">2) MoeScraper</h3>
+              <span class="tag">Python</span>
+              <span class="tag">Tools & Framework</span>
+              <span class="tag">Data Collection</span>
+            </div>
+            <p class="mini-card__text">Python toolkit / library to help retrieve and collect image data from anime image fan art websites.</p>
+            <p class="mini-card__text">License: MIT</p>
+            <p class="mini-card__text"> Link:
+              <a href="https://github.com/luminolous/moescraper" title="MoeScraper" target="_blank">
+              GitHub
+              </a>
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-card__head">
+              <h3 class="mini-card__title">3) Implementation of Mixture of Low-Rank Adapter Experts (X-LoRA) Architecture 
+                                              in English-Indonesian Cross-Lingual Adaptation with Qwen2.5-0.5B</h3>
+              <span class="tag">LLMs</span>
+              <span class="tag">Parameter Efficient Fine Tuning</span>
+              <span class="tag">Cross Lingual</span>
+              <span class="tag">Catastrophic Forgetting</span>
+            </div>
+            <p class="mini-card__text">
+              Attempting to implement the X-LoRA architecture in a Bilingual (English-Indonesian) task. 
+              The datasets used were CendolCollectionv2 for Indonesian and OpenOrca for English, both of which were 
+              pre-sampled to maximize results and save computation. 
+              Evaluation was conducted using BLEU, ROUGE-1, ROUGE-2, and ROUGE-L metrics.
+            </p>
+            <p class="mini-card__text">Model License: MIT</p>
+            <p class="mini-card__text">Link to demonstration:
+              <a href="https://huggingface.co/spaces/lumicero/cross-lingual-waguri-ai" title="X-LoRA Cross Lingual" target="_blank">
+              HuggingFace
+              </a>
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-card__head">
+              <h3 class="mini-card__title">4) Implementation of Fine-Grained Visual Categorization (FGVC) 
+                                              on The Quintessential Quintuplets Images Dataset using TransFG</h3>
+              <span class="tag">Image Classification</span>
+              <span class="tag">Fine-Grained Visual Categorization</span>
+              <span class="tag">Multiclass Image</span>
+            </div>
+            <p class="mini-card__text">
+              Implementation of Fine-Grained Visual Categorization (FGVC) on The Quintessential Quintuplets Images Dataset using 
+              TransFG is a project that trains a fine-grained image classifier to distinguish between the five visually similar 
+              Nakano sisters (Ichika, Nino, Miku, Yotsuba, and Itsuki) using The Quintessential Quintuplets Images dataset. 
+              The pipeline fine-tunes a Vision Transformer with the TransFG idea of leveraging transformer attention to focus on 
+              the most discriminative local patches (“part/patch selection”), which is especially useful for FGVC where class 
+              differences are subtle and often concentrated in small visual cues rather than global shape. Using this TransFG-style 
+              setup, the trained model performs end-to-end inference to output the predicted sister label for a given image, 
+              achieving test loss = 0.4902 and test accuracy = 0.8433 (84.33%) on the held-out test split
+            </p>
+            <p class="mini-card__text">License: MIT</p>
+            <p class="mini-card__text">Link to demonstration:
+              <a href="https://huggingface.co/spaces/lumicero/FGVC-Nakano-Quintuplets" title="FGVC Nakano" target="_blank">
+              HuggingFace
+              </a>
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <div class="mini-card__head">
+              <h3 class="mini-card__title">5) Cross Lingual Web App: Waguri AI</h3>
+              <span class="tag">Next.js</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Typescript</span>
+              <span class="tag">Web Application</span>
+              <span class="tag">AI Deployment</span>
+            </div>
+            <p class="mini-card__text">Waguri AI is a bilingual chatbot web app built as a demonstration of 
+              fine-tuning Qwen2.5-0.5B using Mixture of LoRA Experts (X-LoRA) for the English–Indonesian pair. 
+              This web app is built using Next.js, Typescript, and Tailwind CSS for the frontend and FastAPI for the backend.</p>
+            <p class="mini-card__text">License: Apache 2.0</p>
+            <p class="mini-card__text">Link:
+              <a href="https://github.com/luminolous/CrossLingual-WaguriAI" title="CrossLingual-WaguriAI" target="_blank">
+              GitHub
+              </a>
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2 class="section__title">🤔Web App Idea for Final Project</h2>
+        <div class="highlight">
+          <h3 class="highlight__title">Maybe... I want to build animanga LoRA library for Diffusion Model •⩊•</h3>
+          <p class="highlight__text">
+            So people can search the LoRA adapter for diffusion model based on character name. 
+            Uhmm... for another variation, people can choose that the adapter was fine-tuned w/ Dreambooth or w/o Dreambooth.
+          </p>
+          <div class="tags">
+            <span class="tag">Dashboard</span>
+            <span class="tag">Adapter Collection</span>
+            <span class="tag">Diffusion Model</span>
+            <span class="tag">Image Generation</span>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div>
+            <h3 class="section__subtitle">Feature (target):</h3>
+            <ul class="list">
+              <li>Adapter search based on character name</li>
+              <li>Dreambooth filter</li>
+              <li>Adapter information</li>
+              <li>Upvote or like button</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="section__subtitle">Teknologi</h3>
+            <ul class="list">
+              <li>HTML, CSS, JavaScript</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card section">
+        <h2 class="section__title">🌬️Dream Job</h2>
+        <div class="dream">
+          <div>
+            <h3 class="dream__title"><s>Become Haimiya-san's Husband</s></h3>
+            <p class="dream__text">
+              Saya ingin menjadi Front-End Developer yang fokus membuat UI yang nyaman, responsif, dan accessible,
+              serta bisa bekerja sama dengan tim untuk membangun produk web yang berkualitas.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="card section closing">
+        <p class="closing__text">❄️ ご訪問ありがとうございます。 よい一日を！ (๑>؂•̀๑)</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> luminolous</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const tileRoot = document.getElementById("bgTiles");
+
+    const tileImages = [
+      // "assets/gallery/Haimiya Mio (1).jpg",
+      // "assets/gallery/Haimiya (1).jpg",
+      // "assets/gallery/Haimiya Mio (1).jpg",
+      // "assets/gallery/04.jpg",
+      // "assets/gallery/05.jpg",
+    ];
+
+    const TILE_COUNT = 10;
+
+    function rand(min, max){ return Math.random() * (max - min) + min; }
+    function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+    function buildTiles(){
+      tileRoot.innerHTML = "";
+      for(let i=0;i<TILE_COUNT;i++){
+        const t = document.createElement("div");
+        t.className = "bg-tile";
+
+        const side = Math.random() < 0.5 ? "left" : "right";
+        const x = (side === "left") ? rand(-6, 14) : rand(86, 106);
+        const y = rand(-5, 105);
+        const r = rand(-14, 14);
+        const s = rand(0.85, 1.25);
+
+        t.style.left = x + "vw";
+        t.style.top = y + "vh";
+        t.style.setProperty("--rot", r + "deg");
+        t.style.setProperty("--scale", s);
+
+        if(tileImages.length){
+          t.style.backgroundImage = `url('${pick(tileImages)}')`;
+          t.classList.add("has-img");
+        }
+
+        tileRoot.appendChild(t);
+      }
+    }
+
+    buildTiles();
+    window.addEventListener("resize", () => buildTiles(), { passive: true });
+
+    const btn = document.getElementById("musicBtn");
+    const audio = document.getElementById("bgm");
+
+    function setPlaying(isPlaying){
+      btn.classList.toggle("is-playing", isPlaying);
+      btn.setAttribute("aria-pressed", String(isPlaying));
+      btn.setAttribute("aria-label", isPlaying ? "Pause musik" : "Putar musik");
+    }
+
+    btn.addEventListener("click", async () => {
+      try{
+        if(audio.paused){
+          await audio.play();
+          setPlaying(true);
+        }else{
+          audio.pause();
+          setPlaying(false);
+        }
+      }catch(e){
+        setPlaying(false);
+        console.log("Audio play blocked:", e);
+      }
+    });
+  </script>
+</body>
+</html>
