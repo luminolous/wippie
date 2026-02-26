@@ -1,1 +1,1 @@
-You can check deployweb in here: https://luminolous.github.io/wippie/
+You can check deployweb in here: https://wippie.luminolous.site/
