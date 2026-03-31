@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PianoBloom Academy | Learn Piano with Confidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector("#mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Open mobile menu" : "Close mobile menu"
+      );
+      mobileMenu.hidden = isOpen;
+      mobileMenu.classList.toggle("is-open", !isOpen);
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open mobile menu");
+        mobileMenu.hidden = true;
+        mobileMenu.classList.remove("is-open");
+      });
+    });
+  }
+</script>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <span class="logo-icon">♪</span>
+        <span class="logo-text">PianoBloom Academy</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#instructor">Instructor</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#enroll" class="btn btn-nav desktop-trial-btn">Book a Trial</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open mobile menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#instructor">Instructor</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#enroll" class="btn btn-primary">Book a Trial</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Online & Private Piano Course</span>
+          <h1>Play Beautiful Piano with Structure, Joy, and Confidence</h1>
+          <p class="hero-text">
+            Build solid technique, musical expression, and performance confidence
+            through a modern piano program designed for beginners, hobbyists,
+            and aspiring performers.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#enroll" class="btn btn-primary">Start Your First Lesson</a>
+            <a href="#courses" class="btn btn-secondary">Explore the Program</a>
+          </div>
+
+          <div class="hero-points">
+            <div class="point-card">
+              <strong>Live Sessions</strong>
+              <span>Interactive weekly classes</span>
+            </div>
+            <div class="point-card">
+              <strong>Flexible Tracks</strong>
+              <span>For kids, teens, and adults</span>
+            </div>
+            <div class="point-card">
+              <strong>Performance Focus</strong>
+              <span>Recitals and practice feedback</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="../assets/hero-piano.jpg" alt="Piano student practicing on a grand piano" />
+          <div class="floating-badge badge-top">
+            <span class="badge-number">4.9★</span>
+            <span class="badge-label">Student Satisfaction</span>
+          </div>
+          <div class="floating-badge badge-bottom">
+            <span class="badge-number">120+</span>
+            <span class="badge-label">Learners Enrolled</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <h2>8+</h2>
+          <p>Years of teaching experience</p>
+        </div>
+        <div class="stat-card">
+          <h2>12</h2>
+          <p>Structured modules from basics to performance</p>
+        </div>
+        <div class="stat-card">
+          <h2>1:1</h2>
+          <p>Personalized guidance and weekly feedback</p>
+        </div>
+        <div class="stat-card">
+          <h2>100%</h2>
+          <p>English-based lesson material and piano resources</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <span class="section-label">Why Choose This Course</span>
+          <h2>A Beautiful Learning Experience for Every Pianist</h2>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">♫</div>
+            <h3>Step-by-Step Curriculum</h3>
+            <p>
+              Learn from posture and finger control to expressive playing and
+              complete song performance.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">♩</div>
+            <h3>Practice with Purpose</h3>
+            <p>
+              Each lesson includes guided practice goals, so progress feels
+              clear and motivating every week.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">♬</div>
+            <h3>Modern Song Repertoire</h3>
+            <p>
+              Play classical, cinematic, worship, and contemporary piano pieces
+              based on your learning track.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">♭</div>
+            <h3>Supportive Feedback</h3>
+            <p>
+              Get constructive comments on rhythm, dynamics, hand position, and
+              musicality in every stage.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="courses" class="courses section">
+      <div class="container">
+        <div class="center-title">
+          <span class="section-label">Course Tracks</span>
+          <h2>Choose the Piano Path That Fits You Best</h2>
+          <p>
+            Whether you are starting from zero or returning after years away,
+            there is a track tailored to your pace and musical goals.
+          </p>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card featured">
+            <div class="course-image">
+              <img src="../assets/course-beginner.jpg" alt="Beginner piano lesson" />
+            </div>
+            <div class="course-content">
+              <span class="course-tag">Most Popular</span>
+              <h3>Piano Fundamentals</h3>
+              <p>
+                A beginner-friendly track covering note reading, rhythm,
+                keyboard geography, hand coordination, and your first songs.
+              </p>
+              <ul>
+                <li>12 guided lessons</li>
+                <li>Basic music theory included</li>
+                <li>Perfect for absolute beginners</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-image">
+              <img src="../assets/course-intermediate.jpg" alt="Intermediate piano practice" />
+            </div>
+            <div class="course-content">
+              <span class="course-tag">Growth Track</span>
+              <h3>Intermediate Expression</h3>
+              <p>
+                Improve articulation, pedaling, phrasing, chord understanding,
+                and expressive interpretation across selected repertoire.
+              </p>
+              <ul>
+                <li>Technique and musicality focus</li>
+                <li>Weekly performance review</li>
+                <li>Song interpretation practice</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-image">
+              <img src="../assets/course-performance.jpg" alt="Piano performance stage" />
+            </div>
+            <div class="course-content">
+              <span class="course-tag">Advanced Track</span>
+              <h3>Performance & Repertoire</h3>
+              <p>
+                Build confidence for recitals, recordings, and polished
+                performance with advanced coaching and interpretation guidance.
+              </p>
+              <ul>
+                <li>Performance-centered coaching</li>
+                <li>Advanced repertoire support</li>
+                <li>Refined expressive playing</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="curriculum section">
+      <div class="container curriculum-grid">
+        <div class="curriculum-text">
+          <span class="section-label">Learning Journey</span>
+          <h2>What You Will Learn Inside the Program</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <span>01</span>
+              <div>
+                <h3>Foundation and Posture</h3>
+                <p>Keyboard orientation, sitting position, hand shape, and finger independence.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>02</span>
+              <div>
+                <h3>Reading and Rhythm</h3>
+                <p>Music staff basics, note values, counting exercises, and coordination drills.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>03</span>
+              <div>
+                <h3>Technique and Dynamics</h3>
+                <p>Scales, chord patterns, phrasing, touch control, and expressive contrast.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <span>04</span>
+              <div>
+                <h3>Song Building and Performance</h3>
+                <p>Interpretation, polishing, memorization, and presentation confidence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="curriculum-visual">
+          <img src="../assets/curriculum-piano.jpg" alt="Piano keyboard and sheet music" />
+        </div>
+      </div>
+    </section>
+
+    <section id="instructor" class="instructor section">
+      <div class="container instructor-grid">
+        <div class="instructor-photo">
+          <img src="../assets/instructor.jpg" alt="Piano instructor portrait" />
+        </div>
+
+        <div class="instructor-info">
+          <span class="section-label">Meet Your Instructor</span>
+          <h2>Learn with a Teacher Who Balances Technique and Inspiration</h2>
+
+          <div class="instructor-highlights">
+            <div class="mini-box">
+              <strong>Personalized Teaching</strong>
+              <span>Adapted to student goals and pace</span>
+            </div>
+            <div class="mini-box">
+              <strong>Performance Mindset</strong>
+              <span>Confidence-building beyond practice</span>
+            </div>
+            <div class="mini-box">
+              <strong>Flexible Delivery</strong>
+              <span>Online sessions and guided home practice</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews section">
+      <div class="container">
+        <div class="center-title">
+          <span class="section-label">Student Voices</span>
+          <h2>What Learners Say About the Experience</h2>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <p>
+              “The lessons are organized so clearly that I always know what to
+              practice next. I improved faster than I expected.”
+            </p>
+            <div class="review-author">
+              <strong>Emma L.</strong>
+              <span>Beginner Student</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <p>
+              “I returned to piano after many years, and this program helped me
+              rebuild confidence without feeling overwhelmed.”
+            </p>
+            <div class="review-author">
+              <strong>Daniel R.</strong>
+              <span>Adult Learner</span>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <p>
+              “What I loved most was the balance between technique and
+              musicality. It never felt dry or repetitive.”
+            </p>
+            <div class="review-author">
+              <strong>Sophia M.</strong>
+              <span>Intermediate Student</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing section">
+      <div class="container">
+        <div class="center-title">
+          <span class="section-label">Pricing Plans</span>
+          <h2>Start with the Plan That Matches Your Commitment</h2>
+          <p>
+            Choose a plan for exploration, growth, or intensive private support.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="plan-name">Starter</span>
+            <h3>$29<span>/month</span></h3>
+            <p>Ideal for new learners who want a gentle beginning.</p>
+            <ul>
+              <li>1 live session per week</li>
+              <li>Core lesson materials</li>
+              <li>Practice checklist</li>
+              <li>Email support</li>
+            </ul>
+            <a href="#enroll" class="btn btn-secondary btn-full">Choose Starter</a>
+          </article>
+
+          <article class="price-card recommended">
+            <span class="recommended-badge">Recommended</span>
+            <span class="plan-name">Growth</span>
+            <h3>$59<span>/month</span></h3>
+            <p>Best for steady progress with deeper feedback and structure.</p>
+            <ul>
+              <li>2 live sessions per week</li>
+              <li>Personal practice review</li>
+              <li>Structured repertoire path</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="#enroll" class="btn btn-primary btn-full">Choose Growth</a>
+          </article>
+
+          <article class="price-card">
+            <span class="plan-name">Private Elite</span>
+            <h3>$99<span>/month</span></h3>
+            <p>Focused coaching for performance, exams, or fast improvement.</p>
+            <ul>
+              <li>Private intensive sessions</li>
+              <li>Custom song coaching</li>
+              <li>Performance preparation</li>
+              <li>Direct instructor feedback</li>
+            </ul>
+            <a href="#enroll" class="btn btn-secondary btn-full">Choose Elite</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq section">
+      <div class="container faq-wrapper">
+        <div class="faq-intro">
+          <span class="section-label">Frequently Asked Questions</span>
+          <h2>Everything You Need Before You Join</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Do I need prior piano experience?</summary>
+            <p>No. The beginner track is designed for absolute beginners with no previous experience.</p>
+          </details>
+
+          <details>
+            <summary>Can adults join the program?</summary>
+            <p>Yes. The course is open to children, teens, and adults with different learning tracks.</p>
+          </details>
+
+          <details>
+            <summary>Will I learn both theory and songs?</summary>
+            <p>Yes. Lessons combine theory, technique, reading, rhythm, and song performance.</p>
+          </details>
+
+          <details>
+            <summary>Are classes online or offline?</summary>
+            <p>You can adapt this section later, but for now the design supports online or hybrid course delivery.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="enroll" class="cta section">
+      <div class="container cta-box">
+        <div class="cta-text">
+          <span class="section-label">Ready to Begin</span>
+          <h2>Turn Practice Time into Real Musical Progress</h2>
+          <p>
+            Book your first lesson and start your piano journey with a course
+            designed to make growth feel inspiring.
+          </p>
+        </div>
+
+        <form class="enroll-form" aria-label="Trial lesson booking form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input
+              id="full-name"
+              name="fullName"
+              type="text"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email-address">Email Address</label>
+            <input
+              id="email-address"
+              name="email"
+              type="email"
+              placeholder="Enter your email address"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="course-track">Course Track</label>
+            <select id="course-track" name="courseTrack" required>
+              <option value="" selected disabled>Select a course track</option>
+              <option value="fundamentals">Piano Fundamentals</option>
+              <option value="intermediate">Intermediate Expression</option>
+              <option value="performance">Performance & Repertoire</option>
+            </select>
+            <p class="form-help">Choose the track that best matches your current level.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Book a Trial Lesson</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>PianoBloom Academy</h3>
+        <p>
+          A modern piano learning experience for students who want structured
+          progress, expressive playing, and confident performance.
+        </p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#instructor">Instructor</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: hello@pianobloom.com</li>
+          <li>Phone: +00 123 456 789</li>
+          <li>Studio Hours: Mon - Sat</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 PianoBloom Academy. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
