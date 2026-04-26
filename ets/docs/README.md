@@ -1,5 +1,7 @@
 ## Preview Page
 
+Link PPT & Poster -> https://drive.google.com/drive/folders/1Ofz_on93-dfIN7MQGn0PC14m7BpYqJ49
+
 ![Preview Table](../assets/preview.png)
 
 MBGNews adalah website portal berita interaktif berbasis static frontend yang dibangun dengan HTML, CSS, JavaScript vanilla, dan Bootstrap 5. Project ini menampilkan headline dinamis, kategori berita, detail artikel dari Markdown, search biasa dan semantic-like search, serta interaksi pembaca yang disimpan secara lokal di browser.
