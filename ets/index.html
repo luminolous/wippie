@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Task 6 — Documentation</title>
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+  <header class="top">
+    <div class="container top__inner">
+      <a class="brand" href="../" aria-label="Back to home">
+        <span class="brand__name">Wippie</span>
+      </a>
+
+      <nav class="nav">
+        <a class="nav__link" href="../">Home</a>
+        <a class="nav__link" href="https://github.com/luminolous/MBGNews" target="_blank" rel="noreferrer">
+            Source Code
+        </a>
+        <a class="nav__link" href="https://mbgnews.luminolous.site/">View Project →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="hero__kicker">Documentation</p>
+      <h1 class="hero__title">ETS: MBGNews</h1>
+      <p class="hero__subtitle">Documentation for the project.</p>
+    </section>
+
+    <section class="card" style="padding:16px;">
+      <div id="doc" class="md">Loading…</div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__text footer__muted">© <span id="year"></span> luminolous. All rights reserved.</p>
+    </footer>
+  </main>
+
+  <script>
+    (async () => {
+        const el = document.getElementById("doc");
+
+        const mdUrl   = new URL("./docs/README.md", location.href);
+        const baseUrl = new URL("./docs/", location.href);
+
+        try {
+        const res = await fetch(mdUrl, { cache: "no-store" });
+        if (!res.ok) throw new Error("README.md tidak ditemukan");
+        const md = await res.text();
+
+        el.innerHTML = marked.parse(md);
+
+        el.querySelectorAll("img").forEach(img => {
+            const src = img.getAttribute("src");
+            if (!src) return;
+
+            if (/^(https?:)?\/\//i.test(src) || src.startsWith("data:")) return;
+
+            img.src = new URL(src, baseUrl).href;
+        });
+
+        el.querySelectorAll("a").forEach(a => {
+            const href = a.getAttribute("href");
+            if (!href) return;
+            if (/^(https?:)?\/\//i.test(href) || href.startsWith("#") || href.startsWith("mailto:")) return;
+
+            a.href = new URL(href, baseUrl).href;
+        });
+
+        } catch (e) {
+        el.innerHTML = `<h2>Documentation doesn't exist.</h2></p>`;
+        }
+    })();
+  </script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
