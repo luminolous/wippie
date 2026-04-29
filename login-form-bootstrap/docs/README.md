@@ -1,21 +1,25 @@
-![preview](../assets/Screenshot%202026-04-29%20193904.png)
+![preview](../assets/Screenshot%202026-04-30%20062228.png)
+![preview](../assets/Screenshot%202026-04-30%20062305.png)
 
-Project ini adalah halaman login sederhana yang dibuat menggunakan HTML, CSS, JavaScript, dan Bootstrap.
+NovaLearn is a simple responsive website built with HTML, CSS, JavaScript, and Bootstrap.  
+The website contains a modern content page, navigation bar, feature section, program cards, article section, FAQ accordion, and login/register forms.
 
-## Fitur
+## Features
 
-- Tampilan login form responsive
-- Layout dua kolom dengan gambar di sisi kiri dan form di sisi kanan
-- Input email dan password
-- Dropdown role login
-- Checkbox remember me
-- Link forgot password dan register
-- Validasi form sederhana menggunakan JavaScript
-- Menggunakan Bootstrap CDN
+- Responsive Bootstrap navbar
+- Hero section with call-to-action buttons
+- Content section with feature cards
+- Program section with learning path cards
+- Article and FAQ section
+- Login form
+- Registration form
+- Dropdown menu
+- Form validation with JavaScript
+- Clean and modern UI/UX
 
-## Teknologi yang Digunakan
+## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-- Bootstrap 5
+- Bootstrap 

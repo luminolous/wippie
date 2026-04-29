@@ -1,125 +1,794 @@
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Simple Bootstrap Login Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NovaLearn | Login & Register Website</title>
 
   <!-- Bootstrap CSS -->
   <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
-  />
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Main Container -->
-  <main class="container min-vh-100 d-flex justify-content-center align-items-center py-5">
-    <div class="row login-card shadow-lg rounded-4 overflow-hidden">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#home">
+        <span class="brand-icon">
+          <i class="bi bi-stars"></i>
+        </span>
+        NovaLearn
+      </a>
 
-      <!-- Left Image Section -->
-      <div class="col-md-6 image-section d-none d-md-flex">
-        <div class="image-overlay">
-          <h2>Welcome Back!</h2>
-          <p>Login untuk mengakses halaman utama website.</p>
-        </div>
-      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!-- Right Form Section -->
-      <div class="col-md-6 bg-white p-5">
-        <h3 class="fw-bold mb-2">Login Form</h3>
-        <p class="text-muted mb-4">Silakan masuk menggunakan akun kamu.</p>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
 
-        <form id="loginForm" class="needs-validation" novalidate>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
 
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email Address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              placeholder="Masukkan email"
-              required
-            />
-            <div class="invalid-feedback">
-              Email wajib diisi dengan format yang benar.
-            </div>
-          </div>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Programs
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#programs">Web Development</a></li>
+              <li><a class="dropdown-item" href="#programs">Data Science</a></li>
+              <li><a class="dropdown-item" href="#programs">UI/UX Design</a></li>
+            </ul>
+          </li>
 
-          <!-- Password -->
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              placeholder="Masukkan password"
-              required
-              minlength="6"
-            />
-            <div class="invalid-feedback">
-              Password minimal 6 karakter.
-            </div>
-          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#article">Article</a>
+          </li>
 
-          <!-- Dropdown Role -->
-          <div class="mb-3">
-            <label for="role" class="form-label">Login Sebagai</label>
-            <select class="form-select" id="role" required>
-              <option value="">Pilih role</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
-              <option value="guest">Guest</option>
-            </select>
-            <div class="invalid-feedback">
-              Silakan pilih role terlebih dahulu.
-            </div>
-          </div>
-
-          <!-- Remember Me and Forgot Password -->
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="rememberMe" />
-              <label class="form-check-label" for="rememberMe">
-                Remember me
-              </label>
-            </div>
-
-            <a href="#" class="small text-decoration-none">Forgot password?</a>
-          </div>
-
-          <!-- Button -->
-          <button type="submit" class="btn btn-primary w-100 mb-3">
-            Sign In
-          </button>
-
-          <!-- Register Link -->
-          <p class="text-center mb-0">
-            Belum punya akun?
-            <a href="#" class="text-decoration-none fw-semibold">Register</a>
-          </p>
-
-        </form>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-light rounded-1 px-4 fw-semibold" href="#auth">
+              Sign In
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center min-vh-100 g-5">
+        <div class="col-lg-6">
+          <span class="badge rounded-1 hero-badge mb-3">
+            Modern Online Learning Platform
+          </span>
+
+          <h1 class="display-4 fw-bold text-white hero-title">
+            Build skills faster with a clean learning experience.
+          </h1>
+
+          <p class="lead text-white-50 mt-3 mb-4">
+            NovaLearn helps students explore technology, design, and digital
+            creativity through structured lessons, interactive content, and
+            beginner-friendly learning paths.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#auth" class="btn btn-primary btn-lg rounded-1 px-4">
+              Get Started
+            </a>
+            <a href="#features" class="btn btn-outline-light btn-lg rounded-1 px-4">
+              Explore Features
+            </a>
+          </div>
+
+          <div class="row mt-5 g-3">
+            <div class="col-4">
+              <div class="stat-card">
+                <h3>25K+</h3>
+                <p>Learners</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card">
+                <h3>120+</h3>
+                <p>Lessons</p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="stat-card">
+                <h3>4.9</h3>
+                <p>Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-preview-card">
+            <div class="preview-header">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="preview-body">
+              <div class="learning-card active">
+                <div class="icon-box">
+                  <i class="bi bi-code-slash"></i>
+                </div>
+                <div>
+                  <h5>Web Development Basics</h5>
+                  <p>HTML, CSS, JavaScript, and Bootstrap fundamentals.</p>
+                </div>
+              </div>
+
+              <div class="learning-card">
+                <div class="icon-box">
+                  <i class="bi bi-bar-chart-line"></i>
+                </div>
+                <div>
+                  <h5>Data Thinking</h5>
+                  <p>Learn how to read, clean, and explain data clearly.</p>
+                </div>
+              </div>
+
+              <div class="learning-card">
+                <div class="icon-box">
+                  <i class="bi bi-palette"></i>
+                </div>
+                <div>
+                  <h5>Creative Design</h5>
+                  <p>Create simple, accessible, and beautiful user interfaces.</p>
+                </div>
+              </div>
+
+              <div class="progress mt-4" role="progressbar" aria-label="Learning progress">
+                <div class="progress-bar" style="width: 78%">78%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Features -->
+    <section id="features" class="section-padding bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-label">Why Choose Us</span>
+          <h2 class="section-title">Learning made simple and enjoyable</h2>
+          <p class="section-subtitle">
+            A clean interface, structured content, and responsive design make
+            NovaLearn comfortable to use on any device.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-icon">
+                <i class="bi bi-layout-text-window-reverse"></i>
+              </div>
+              <h4>Structured Content</h4>
+              <p>
+                Lessons are organized into clear modules so learners can follow
+                each topic step by step.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-icon">
+                <i class="bi bi-phone"></i>
+              </div>
+              <h4>Responsive Layout</h4>
+              <p>
+                The website adjusts beautifully on desktop, tablet, and mobile
+                screens using Bootstrap grid utilities.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="feature-card h-100">
+              <div class="feature-icon">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <h4>Friendly Forms</h4>
+              <p>
+                Login and registration forms include clean input fields,
+                selection options, checkboxes, and validation feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programs -->
+    <section id="programs" class="section-padding">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <span class="section-label">Programs</span>
+            <h2 class="section-title text-start">
+              Choose a learning path that fits your goal.
+            </h2>
+            <p class="text-muted">
+              Start from the basics and move toward practical projects. Each
+              program is designed to help beginners understand concepts through
+              simple examples.
+            </p>
+
+            <div class="list-group custom-list mt-4">
+              <a href="#auth" class="list-group-item list-group-item-action">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Beginner-friendly learning path
+              </a>
+              <a href="#auth" class="list-group-item list-group-item-action">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Clean examples and project tasks
+              </a>
+              <a href="#auth" class="list-group-item list-group-item-action">
+                <i class="bi bi-check-circle-fill me-2"></i>
+                Modern UI with Bootstrap components
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-top">
+                    <i class="bi bi-window"></i>
+                    <span>Popular</span>
+                  </div>
+                  <h4>Web Development</h4>
+                  <p>
+                    Learn how to build responsive pages using HTML, CSS,
+                    JavaScript, and Bootstrap.
+                  </p>
+                  <a href="#auth">Start learning <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-top">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>New</span>
+                  </div>
+                  <h4>Data Science</h4>
+                  <p>
+                    Understand data analysis, visualization, and basic machine
+                    learning concepts.
+                  </p>
+                  <a href="#auth">Start learning <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-top">
+                    <i class="bi bi-brush"></i>
+                    <span>Creative</span>
+                  </div>
+                  <h4>UI/UX Design</h4>
+                  <p>
+                    Design simple interfaces with strong visual hierarchy and
+                    user-friendly layouts.
+                  </p>
+                  <a href="#auth">Start learning <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="program-card">
+                  <div class="program-top">
+                    <i class="bi bi-robot"></i>
+                    <span>Advanced</span>
+                  </div>
+                  <h4>AI Fundamentals</h4>
+                  <p>
+                    Explore artificial intelligence concepts through clear
+                    explanations and simple workflows.
+                  </p>
+                  <a href="#auth">Start learning <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Article Content -->
+    <section id="article" class="section-padding bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="sidebar-card sticky-lg-top">
+              <h5>Content Menu</h5>
+              <a href="#features">Platform Features</a>
+              <a href="#programs">Learning Programs</a>
+              <a href="#auth">Account Access</a>
+              <a href="#faq">FAQ Section</a>
+            </div>
+          </div>
+
+          <div class="col-lg-8">
+            <article class="article-card">
+              <span class="section-label">Main Article</span>
+              <h2>How NovaLearn supports better digital learning</h2>
+              <p>
+                Digital learning should be simple, structured, and visually
+                comfortable. NovaLearn focuses on helping learners understand
+                important concepts through organized content sections, practical
+                program cards, and a clear account access page.
+              </p>
+
+              <p>
+                The website layout combines navigation, content, feature cards,
+                and authentication forms in one responsive page. This approach
+                makes the interface easy to explore while still meeting the
+                needs of a complete website exercise.
+              </p>
+
+              <div class="quote-box">
+                “A good learning website should not only look beautiful, but
+                also make users feel guided from the first click.”
+              </div>
+            </article>
+
+            <div id="faq" class="mt-4">
+              <div class="accordion" id="learningFAQ">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqOne"
+                    >
+                      Is this website responsive?
+                    </button>
+                  </h2>
+                  <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#learningFAQ">
+                    <div class="accordion-body">
+                      Yes. The layout uses Bootstrap grid classes and custom CSS
+                      to adapt across desktop, tablet, and mobile screens.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqTwo"
+                    >
+                      Does the form connect to a database?
+                    </button>
+                  </h2>
+                  <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#learningFAQ">
+                    <div class="accordion-body">
+                      No. This project is a front-end exercise. The form includes
+                      interface validation, but it does not store data in a
+                      database.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#faqThree"
+                    >
+                      What technologies are used?
+                    </button>
+                  </h2>
+                  <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#learningFAQ">
+                    <div class="accordion-body">
+                      This website uses HTML, CSS, JavaScript, Bootstrap, and
+                      Bootstrap Icons.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login and Register Section -->
+    <section id="auth" class="auth-section section-padding">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-11">
+            <div class="auth-wrapper">
+              <div class="row g-0">
+                
+                <!-- Left Panel -->
+                <div class="col-lg-5">
+                  <div class="auth-info-panel h-100">
+                    <span class="badge rounded-1 text-bg-light mb-3">
+                      Join NovaLearn
+                    </span>
+
+                    <h2>Start your learning journey today.</h2>
+                    <p>
+                      Create an account or sign in to access your dashboard,
+                      learning progress, and recommended programs.
+                    </p>
+
+                    <div class="auth-benefit">
+                      <i class="bi bi-check2-circle"></i>
+                      <span>Simple and clean account access</span>
+                    </div>
+
+                    <div class="auth-benefit">
+                      <i class="bi bi-check2-circle"></i>
+                      <span>Modern Bootstrap-based interface</span>
+                    </div>
+
+                    <div class="auth-benefit">
+                      <i class="bi bi-check2-circle"></i>
+                      <span>Responsive design for all devices</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="col-lg-7">
+                  <div class="auth-form-panel">
+                    <ul class="nav nav-pills auth-tabs mb-4" id="authTab" role="tablist">
+                      <li class="nav-item w-50" role="presentation">
+                        <button
+                          class="nav-link active w-100"
+                          id="login-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#login"
+                          type="button"
+                          role="tab"
+                        >
+                          Sign In
+                        </button>
+                      </li>
+
+                      <li class="nav-item w-50" role="presentation">
+                        <button
+                          class="nav-link w-100"
+                          id="register-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#register"
+                          type="button"
+                          role="tab"
+                        >
+                          Register
+                        </button>
+                      </li>
+                    </ul>
+
+                    <div class="tab-content" id="authTabContent">
+                      
+                      <!-- Login Form -->
+                      <div class="tab-pane fade show active" id="login" role="tabpanel">
+                        <h3 class="fw-bold mb-1">Welcome back!</h3>
+                        <p class="text-muted mb-4">
+                          Please sign in to continue to your learning dashboard.
+                        </p>
+
+                        <form class="needs-validation" id="loginForm" novalidate>
+                          <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email Address</label>
+                            <div class="input-group">
+                              <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                              </span>
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="loginEmail"
+                                placeholder="name@example.com"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Please enter a valid email address.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <div class="input-group">
+                              <span class="input-group-text">
+                                <i class="bi bi-lock"></i>
+                              </span>
+                              <input
+                                type="password"
+                                class="form-control"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                minlength="6"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Password must contain at least 6 characters.
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <label for="loginRole" class="form-label">Login As</label>
+                            <select class="form-select" id="loginRole" required>
+                              <option value="" selected disabled>Choose your role</option>
+                              <option value="student">Student</option>
+                              <option value="mentor">Mentor</option>
+                              <option value="admin">Admin</option>
+                            </select>
+                            <div class="invalid-feedback">
+                              Please select your role.
+                            </div>
+                          </div>
+
+                          <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="rememberMe">
+                              <label class="form-check-label" for="rememberMe">
+                                Remember me
+                              </label>
+                            </div>
+                            <a href="#" class="small text-decoration-none">Forgot password?</a>
+                          </div>
+
+                          <button type="submit" class="btn btn-primary w-100 auth-submit">
+                            Sign In
+                          </button>
+                        </form>
+                      </div>
+
+                      <!-- Register Form -->
+                      <div class="tab-pane fade" id="register" role="tabpanel">
+                        <h3 class="fw-bold mb-1">Create your account</h3>
+                        <p class="text-muted mb-4">
+                          Register for free and begin exploring digital skills.
+                        </p>
+
+                        <form class="needs-validation" id="registerForm" novalidate>
+                          <div class="row g-3">
+                            <div class="col-md-6">
+                              <label for="firstName" class="form-label">First Name</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="firstName"
+                                placeholder="First name"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Please enter your first name.
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="lastName" class="form-label">Last Name</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="lastName"
+                                placeholder="Last name"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Please enter your last name.
+                              </div>
+                            </div>
+
+                            <div class="col-12">
+                              <label for="displayName" class="form-label">Display Name</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="displayName"
+                                placeholder="Your public display name"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Please enter your display name.
+                              </div>
+                            </div>
+
+                            <div class="col-12">
+                              <label for="registerEmail" class="form-label">Email Address</label>
+                              <input
+                                type="email"
+                                class="form-control"
+                                id="registerEmail"
+                                placeholder="name@example.com"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Please enter a valid email address.
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="registerPassword" class="form-label">Password</label>
+                              <input
+                                type="password"
+                                class="form-control"
+                                id="registerPassword"
+                                placeholder="Create password"
+                                minlength="6"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Password must contain at least 6 characters.
+                              </div>
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="confirmPassword" class="form-label">Confirm Password</label>
+                              <input
+                                type="password"
+                                class="form-control"
+                                id="confirmPassword"
+                                placeholder="Confirm password"
+                                minlength="6"
+                                required
+                              >
+                              <div class="invalid-feedback">
+                                Password confirmation must match.
+                              </div>
+                            </div>
+
+                            <div class="col-12">
+                              <label for="learningGoal" class="form-label">Learning Goal</label>
+                              <select class="form-select" id="learningGoal" required>
+                                <option value="" selected disabled>Choose your learning goal</option>
+                                <option value="web">Web Development</option>
+                                <option value="data">Data Science</option>
+                                <option value="design">UI/UX Design</option>
+                                <option value="ai">AI Fundamentals</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please choose your learning goal.
+                              </div>
+                            </div>
+
+                            <div class="col-12">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  id="termsAgreement"
+                                  required
+                                >
+                                <label class="form-check-label" for="termsAgreement">
+                                  I agree to the Terms and Conditions.
+                                </label>
+                                <div class="invalid-feedback">
+                                  You must agree before registering.
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-12">
+                              <button type="submit" class="btn btn-success w-100 auth-submit">
+                                Register Account
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Success Alert -->
-  <div
-    id="successAlert"
-    class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 d-none"
-    role="alert"
-  >
-    Login berhasil diproses secara front-end!
+  <!-- Toast Notification -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div
+      id="successToast"
+      class="toast align-items-center text-bg-success border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+    >
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessage">
+          Form submitted successfully.
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Footer -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <h5 class="fw-bold mb-1">NovaLearn</h5>
+          <p class="mb-0 text-white-50">
+            A simple Bootstrap website for content, login, and registration.
+          </p>
+        </div>
+
+        <div class="col-md-6 text-md-end">
+          <a href="#home">Home</a>
+          <a href="#features">Features</a>
+          <a href="#auth">Account</a>
+          <p class="mb-0 mt-2 text-white-50">
+            © 2026 NovaLearn. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
 
   <!-- Custom JS -->
   <script src="script.js"></script>

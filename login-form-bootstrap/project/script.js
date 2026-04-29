@@ -1,29 +1,43 @@
-const loginForm = document.getElementById("loginForm");
-const successAlert = document.getElementById("successAlert");
+// Bootstrap form validation and simple success toast
+(() => {
+  "use strict";
 
-loginForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+  const forms = document.querySelectorAll(".needs-validation");
+  const successToast = document.getElementById("successToast");
+  const toastMessage = document.getElementById("toastMessage");
 
-  if (!loginForm.checkValidity()) {
-    event.stopPropagation();
-    loginForm.classList.add("was-validated");
-    return;
-  }
+  forms.forEach((form) => {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
 
-  const email = document.getElementById("email").value;
-  const role = document.getElementById("role").value;
-  const rememberMe = document.getElementById("rememberMe").checked;
+      const registerPassword = document.getElementById("registerPassword");
+      const confirmPassword = document.getElementById("confirmPassword");
 
-  console.log("Email:", email);
-  console.log("Role:", role);
-  console.log("Remember Me:", rememberMe);
+      if (form.id === "registerForm") {
+        if (registerPassword.value !== confirmPassword.value) {
+          confirmPassword.setCustomValidity("Passwords do not match.");
+        } else {
+          confirmPassword.setCustomValidity("");
+        }
+      }
 
-  successAlert.classList.remove("d-none");
+      if (form.checkValidity()) {
+        if (form.id === "loginForm") {
+          toastMessage.textContent = "Sign in form submitted successfully.";
+        } else {
+          toastMessage.textContent = "Registration form submitted successfully.";
+        }
 
-  setTimeout(function () {
-    successAlert.classList.add("d-none");
-  }, 3000);
+        const toast = new bootstrap.Toast(successToast);
+        toast.show();
 
-  loginForm.reset();
-  loginForm.classList.remove("was-validated");
-});
+        form.reset();
+        form.classList.remove("was-validated");
+        return;
+      }
+
+      form.classList.add("was-validated");
+    });
+  });
+})();
